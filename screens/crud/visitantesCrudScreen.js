@@ -1,9 +1,9 @@
-import { Text, View } from 'react-native';
+import { Button , View } from 'react-native';
 
-export function VisitantesCrudScreen({ navigation }) {
+export function VisitantesCrudScreen({ navigation: { goBack } }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Visitantes CRUD</Text>
+      <Button onPress={() => goBack()} title="Cancel" />
     </View>
   );
 }
