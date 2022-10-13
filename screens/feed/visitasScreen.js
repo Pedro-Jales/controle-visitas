@@ -6,7 +6,6 @@ import { VisitasCrudScreen } from '../crud/visitasCrudScreen'
 function VisitasFeedScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Ola! Tudo bom?</Text>
       <Button 
         title="Go to Crud"
         onPress={() => navigation.navigate('Crud')}
