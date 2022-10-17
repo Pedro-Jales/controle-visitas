@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { VisitasScreen } from './screens/feed/visitasScreen'
 import { VisitantesScreen } from './screens/feed/visitantesScreen';
 
+
 const Tab = createBottomTabNavigator();
 
 export default function App() {
