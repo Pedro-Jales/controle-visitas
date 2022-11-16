@@ -2,6 +2,7 @@ import { Button, Text, View } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { VisitasCrudScreen } from '../crud/visitasCrudScreen'
+import { listarVisitantes } from '../../services/visitanteService'
 
 function VisitasFeedScreen({ navigation }) {
   return (
@@ -17,6 +18,8 @@ function VisitasFeedScreen({ navigation }) {
 const Stack = createNativeStackNavigator();
 
 export function VisitasScreen({ navigation }) {
+  // listarVisitantes()
+
   return (
     <Stack.Navigator>
       <Stack.Screen name="Feed" component={VisitasFeedScreen} options={{ headerShown: false }}/>
