@@ -7,6 +7,7 @@ import { VisitantesScreen } from './screens/feed/visitantesScreen';
 const Tab = createBottomTabNavigator();
 
 export default function App() {
+  
   return (
     <NavigationContainer>{
 

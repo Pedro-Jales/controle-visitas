@@ -1,9 +1,10 @@
 import axios from "axios";
+import * as _ from "./config"
 
-var domain = "10.0.2.2" // points to PC localhost
-var port = "3000" // Should be the same as used in json-server
+// var domain = "10.0.2.2" // points to PC localhost
+// var port = "3000" // Should be the same as used in json-server
 
-var url = `http://${domain}:${port}/visitantes`
+const url = `${_.VISITANTE}`
 
 export async function listarVisitantes() {
     axios.get(url).then((response) => {
