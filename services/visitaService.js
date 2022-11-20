@@ -1,9 +1,9 @@
 import axios from "axios";
 import * as _ from "./config"
 
-const url = `${_.VISITANTE}`
+const url = `${_.VISITA}`
 
-export async function listarVisitantes() {
+export async function listarVisitas() {
     axios.get(url).then((response) => {
         var data = JSON.stringify(response.data, null, 2)
         return (data)
@@ -12,7 +12,7 @@ export async function listarVisitantes() {
     })
 }
 
-export async function getVisitante(id) {
+export async function getVisita(id) {
     axios.get(`${url}/${id}`).then((response) => {
         var data = JSON.stringify(response.data, null, 2)
         return (data)
@@ -21,8 +21,8 @@ export async function getVisitante(id) {
     })
 }
 
-export async function postVisitante(visitante) {
-    axios.post(`${url}`, visitante)
+export async function postVisita(visita) {
+    axios.post(`${url}`, visita)
         .then(function (response) {
             return(response.data);
         })
@@ -31,9 +31,9 @@ export async function postVisitante(visitante) {
         });
 }
 
-export async function delVisitante(id) {
+export async function delVisita(id) {
     axios.delete(`${url}/${id}`).then((response) => {
-        return (`Visitante ${id} deletado.`)
+        return (`Visita ${id} deletada.`)
     }).catch((error) => {
         return (`!error: ${error.response.status}`)
     })
