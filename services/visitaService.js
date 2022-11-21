@@ -6,6 +6,7 @@ const url = `${_.VISITA}`
 export async function listarVisitas() {
     axios.get(url).then((response) => {
         var data = JSON.stringify(response.data, null, 2)
+  console.log("service") 
         return (data)
     }).catch((error) => {
         return (`!error: ${error.response.status}`)

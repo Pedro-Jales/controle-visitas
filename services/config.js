@@ -3,4 +3,4 @@ export const PORT="3000"        // Should be the same as used in json-server
 
 export const URL=`http://${BASEURL}:${PORT}`
 export const VISITANTE=`${URL}/visitantes`
-export const VISITA=`${URL}/visitas`
+export const VISITA=`${URL}/historico`
