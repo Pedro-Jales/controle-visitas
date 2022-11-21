@@ -1,9 +1,9 @@
-import { Button, FlatList, Text, Pressable, SafeAreaView, ActivityIndicator, StyleSheet, Modal, View } from 'react-native';
+import { Button, FlatList, Text, Pressable, SafeAreaView, ActivityIndicator, StyleSheet, View } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useState, useEffect } from 'react';
 import Constants from 'expo-constants';
 
-import { AlterarVisitante, VisitantesCrudScreen } from '../crud/visitantesCrudScreen'
+import { VisitantesCrudScreen } from '../crud/visitantesCrudScreen'
 import axios from 'axios';
 
 
@@ -21,7 +21,7 @@ function NovoVisitante({ navigation }) {
     <Button
       style={styles.botao}
       title="Novo Visitante"
-      onPress={() => navigation.navigate('Crud')}
+      onPress={() => navigation.push('Crud')}
     />
   );
 }
@@ -29,7 +29,6 @@ function NovoVisitante({ navigation }) {
 function MostrarVisitantes({ navigation }) {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
-  const [visitante, setVisitante] = useState([]);
 
   useEffect(() => {
     axios.get("http://10.0.2.2:3000/visitantes/")
@@ -41,8 +40,7 @@ function MostrarVisitantes({ navigation }) {
   // keyExtractor={({ item }) => id}
   return <SafeAreaView style={styles.container}>
     {isLoading ? <ActivityIndicator /> :
-      <View data={data}>
-
+      <View>
         <FlatList
           data={data}
           renderItem={({ item }) => (
@@ -66,8 +64,8 @@ const Stack = createNativeStackNavigator();
 export function VisitantesScreen({ navigation }) {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Feed" component={VisitantesFeedScreen} options={{ headerShown: false }} onPress={() => navigation.navigate('Feed')}/>
-      <Stack.Screen name="Crud" component={VisitantesCrudScreen} options={{ headerShown: false }} onPress={() => navigation.navigate('Crud')} />
+      <Stack.Screen name="Feed" component={VisitantesFeedScreen} options={{ headerShown: false }} onPress={() => navigation.push('Feed')}/>
+      <Stack.Screen name="Crud" component={VisitantesCrudScreen} options={{ headerShown: false }} onPress={() => navigation.push('Crud')} />
     </Stack.Navigator>
   );
 }

@@ -1,8 +1,7 @@
-import { Button, FlatList, Text, View, Pressable, SafeAreaView, ActivityIndicator, StyleSheet, Modal } from 'react-native';
+import { Button, FlatList, Text, View, Pressable, SafeAreaView, ActivityIndicator, StyleSheet } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useState, useEffect } from 'react';
 import Constants from 'expo-constants';
- 
 
 import { VisitasCrudScreen } from '../crud/visitasCrudScreen'
 import axios from 'axios';
@@ -21,12 +20,12 @@ function NovaVisita({ navigation }) {
     <Button
       style={styles.botao}
       title="Nova visita"
-      onPress={() => navigation.navigate('Crud')}
+      onPress={() => navigation.push('Crud')}
     />
   );
 }
 
-function MostrarVisitas() {
+function MostrarVisitas({ navigation }) {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
@@ -40,14 +39,14 @@ function MostrarVisitas() {
   return <SafeAreaView style={styles.container}>
     {isLoading ? <ActivityIndicator /> :
       <View>
-
         <FlatList
           data={data}
-          keyExtractor={({ id }) => id}
           renderItem={({ item }) => (
             <Pressable
               style={styles.visita}
-              onPress={() => alert("uepa")}>
+              onPress={() =>
+                navigation.navigate('Crud', item.id)
+              }>
               <Text>Nome: {(item.visitante)}</Text>
               <Text>Local: {(item.local)}</Text>
               <Text>Horário: {(item.horario)}</Text>
@@ -66,8 +65,8 @@ export function VisitasScreen({ navigation }) {
 
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Feed" component={VisitasFeedScreen} options={{ headerShown: false }} />
-      <Stack.Screen name="Crud" component={VisitasCrudScreen} options={{ headerShown: false }} />
+      <Stack.Screen name="Feed" component={VisitasFeedScreen} options={{ headerShown: false }}  onPress={() => navigation.push('Feed')}/>
+      <Stack.Screen name="Crud" component={VisitasCrudScreen} options={{ headerShown: false }} onPress={() => navigation.push('Crud')}/>
     </Stack.Navigator>
   );
 }

@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Text, View, StyleSheet, Pressable, Modal, TextInput, Button } from 'react-native';
 import Constants from 'expo-constants'
 import axios from 'axios';
-import { StackActions } from "@react-navigation/native";
 
 
 export function VisitantesCrudScreen({ route, navigation }) {
