@@ -50,7 +50,6 @@ function MostrarVisitantes({ navigation }) {
                 navigation.navigate('Crud', item.id)
               }}>
               <Text>Nome: {(item.name)}</Text>
-              <Text>Id: {(item.id)}</Text>
             </Pressable>
           )}
         />

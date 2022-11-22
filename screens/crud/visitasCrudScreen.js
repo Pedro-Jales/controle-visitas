@@ -11,7 +11,7 @@ export function VisitasCrudScreen({ route, navigation }) {
   let id = route.params;
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View class="container" style={styles.container}>
       <Text>Visitante:</Text>
       <TextInput style={styles.input} onChangeText={(visitante) => setVisitante(visitante)} />
 
@@ -33,6 +33,7 @@ export function VisitasCrudScreen({ route, navigation }) {
     </View>
   );
 }
+
 
 function NovaVisita(visita) {
   console.log(visita)

@@ -45,7 +45,7 @@ function MostrarVisitas({ navigation }) {
             <Pressable
               style={styles.visita}
               onPress={() =>
-                navigation.navigate('Crud', item.id)
+                navigation.push('Crud', item.id)
               }>
               <Text>Nome: {(item.visitante)}</Text>
               <Text>Local: {(item.local)}</Text>
