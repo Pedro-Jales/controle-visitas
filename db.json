@@ -1,19 +1,39 @@
 {
-  "posts": [
+  "visitantes": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "name": "Pietra Silva Oliveira",
+      "email": "Poliveira@hotmail.com",
+      "cpf": "72578642787",
+      "telefone": "61983742314"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 2,
+      "name": "Alice Mendez Queiroz Teixeira",
+      "email": "amqueiroz@hotmail.com",
+      "cpf": "6828487624",
+      "telefone": "61984568754"
+    },
+    {
+      "id": 4,
+      "name": "Caio Dias Britto das Neves",
+      "email": "caioneves@yahoo.com",
+      "cpf": "35244840410",
+      "telefone": "61985479598"
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "historico": [
+    {
+      "id": 2,
+      "visitante": "Fred Flintstone",
+      "horario": "16/11/2022 14:59",
+      "local": "109"
+    },
+    {
+      "id": 3,
+      "visitante": "Caio Dias Britto das Neves",
+      "horario": "16/11/2022 15:01",
+      "local": "T05"
+    }
+  ]
 }
